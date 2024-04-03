@@ -1,0 +1,24 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "nome": "alessio",
+      "cognome": "salzillo"
+    },
+    {
+      "id": 2,
+      "nome": "tatore",
+      "cognome": "solimeno"
+    },
+    {
+      "id": 3,
+      "nome": "francesco",
+      "cognome": "aversano"
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "id": 4
+    }
+  ]
+}
