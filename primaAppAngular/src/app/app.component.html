@@ -1,0 +1,10 @@
+<app-componente-input 
+[utenteFiglio]="utente"
+ [numeroFiglio]="numeroDItelefonio">
+</app-componente-input>
+
+<app-output (evento)="logEvento($event)"></app-output>
+
+<app-secondo-c (click1)="riceviEvento($event)"></app-secondo-c>
+
+<app-invio (eventomessaggio)="riceviMessaggio($event)" ></app-invio>
