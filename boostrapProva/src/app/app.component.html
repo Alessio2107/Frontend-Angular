@@ -1,0 +1,55 @@
+<button type="submit" class="btn btn-primary" (click)="mostraColori()">Dividi Maggiorenni/Minorenni</button>
+<button type="submit" class="btn btn-dark" (click)="nascondiCognomi()">Nascondi/Rivela Cognomi</button>
+<button type="submit" class="btn btn-warning" (click)="nascondiNomi()">Nascondi/RIvela Nomi</button>
+<table class="table table-info">
+  <thead>
+    <tr>
+      <th *ngIf="!nascondiNomiVar">nome</th>
+      <th *ngIf="!nascondiCognomiVar">Cognome</th>
+      <th>età</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let utente of utenti"
+      [class.table-danger]="utente.eta <= 18 && isColorato"
+      [class.table-success]="utente.eta > 18 && isColorato" >
+      <td *ngIf="!nascondiNomiVar">{{utente.nome}}</td>
+      <td *ngIf="!nascondiCognomiVar">{{utente.cognome}}</td>
+      <td>{{utente.eta}}</td>
+    </tr>
+  </tbody>
+</table>
+<br><hr>
+<button (click)="view= !view">Mostra/Nascondi Cognomi</button>
+
+<app-utente
+*ngFor="let utente of utenti"
+[utente]="utente"
+[isBoolean]="view"></app-utente>
+
+
+<button (click)="distruggi= !distruggi">toggle</button>
+<app-test-ciclo [testo]="'ciao'" *ngIf="!distruggi"></app-test-ciclo>
+<p>{{ utenti | json}}</p>
+<!-- [class.table-danger]="utente.eta <= 18"
+      [class.table-success]="utente.eta > 18" -->
+
+    <!-- ogni volta che clicco setta l'opposto della variabile
+    con=
+    <tr *ngFor="let utente of utenti"
+      [class.table-danger]="utente.eta <= 18 && isColorato"
+      [class.table-success]="utente.eta > 18 && isColorato" >
+  
+  -->
+
+  <hr><br>
+
+  <div *ngFor="let u of utenti2 | filtro:'alessio'">
+    {{u.nome | upperCustom}}
+  </div>
+  <div>{{date| moment:'DD/MM/YYYY'}}</div>
+  <div>{{'2024-03-19' | moment:'ll'}}</div>
+  <div>{{date| moment:'HH:mm'}}</div>
+  <div>{{date}}</div>
+
+
